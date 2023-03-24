@@ -1,18 +1,19 @@
 [tool.poetry]
-name = "Project Name"
+name = "nonebot-plugin-send-anything-anywhere-nonebug"
 version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+description = "A nonebug helper for nonebot-plugin-send-anything-anything"
+authors = ["me@felinae98.cn"]
 license = "MIT"
 readme = "README.md"
-homepage = ""
+homepage = "https://github.com/felinae98/nonebot-plugin-send-anything-anywhere-nonebug"
+packages = [{include = "nonebot_plugin_saa"}]
 repository = ""
 documentation = ""
 keywords = []
 classifiers = []
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.10"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.10.1"
