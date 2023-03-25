@@ -2,7 +2,7 @@
 name = "nonebot-plugin-send-anything-anywhere-nonebug"
 version = "0.1.0"
 description = "A nonebug helper for nonebot-plugin-send-anything-anything"
-authors = ["me@felinae98.cn"]
+authors = ["felinae98 <me@felinae98.cn>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/felinae98/nonebot-plugin-send-anything-anywhere-nonebug"
@@ -10,16 +10,22 @@ packages = [{include = "nonebot_plugin_saa"}]
 repository = ""
 documentation = ""
 keywords = []
-classifiers = []
+classifiers = ["Framework :: Pytest"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+nonebot-plugin-send-anything-anywhere = {git = "https://github.com/felinae98/nonebot-plugin-send-anything-anywhere.git", rev = "main"}
+nonebug = "^0.3.1"
+pytest-mock = "^3.10.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.10.1"
 black = "^22.3.0"
 nonemoji = "^0.1.2"
 pre-commit = "^2.16.0"
+
+[tool.poetry.plugins.pytest11]
+saa_nonebug = "nonebot_plugin_saa.nonebug.fixtures"
 
 [tool.black]
 line-length = 88
