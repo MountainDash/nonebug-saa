@@ -37,9 +37,13 @@ def saa_patch(mocker: MockerFixture):
         self: AggregatedMessageFactory,
         bot: Bot,
         target: PlatformTarget,
+        event: Optional[Event],
     ):
         await bot.call_api(
-            "_saa_send_aggreagated_msg", aggregated_message_factory=self, target=target
+            "_saa_send_aggreagated_msg",
+            aggregated_message_factory=self,
+            target=target,
+            event=event,
         )
 
-    mocker.patch.object(AggregatedMessageFactory, "_do_send", _do_send_ms_fact)
+    mocker.patch.object(AggregatedMessageFactory, "_do_send", _do_send_aggregate)

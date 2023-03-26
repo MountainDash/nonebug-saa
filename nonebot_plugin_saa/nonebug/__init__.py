@@ -3,12 +3,17 @@ from typing import Optional
 from nonebot.adapters import Bot, Event
 from nonebug.mixin.call_api import ApiContext
 
-from nonebot_plugin_saa import MessageFactory, PlatformTarget, extract_target
+from nonebot_plugin_saa import (
+    MessageFactory,
+    PlatformTarget,
+    AggregatedMessageFactory,
+    extract_target,
+)
 
 
 def should_send_saa(
     ctx: ApiContext,
-    msg: MessageFactory,
+    msg: MessageFactory | AggregatedMessageFactory,
     bot: Bot,
     *,
     target: Optional[PlatformTarget] = None,
@@ -21,14 +26,25 @@ def should_send_saa(
     if not target:
         assert event
         target = extract_target(event)
-    ctx.should_call_api(
-        "_saa_send_msg",
-        {
-            "message_factory": msg,
-            "target": target,
-            "event": event,
-            "at_sender": at_sender,
-            "reply": reply,
-        },
-        None,
-    )
+    if isinstance(msg, MessageFactory):
+        ctx.should_call_api(
+            "_saa_send_msg",
+            {
+                "message_factory": msg,
+                "target": target,
+                "event": event,
+                "at_sender": at_sender,
+                "reply": reply,
+            },
+            None,
+        )
+    else:
+        ctx.should_call_api(
+            "_saa_send_aggreagated_msg",
+            {
+                "aggregated_message_factory": msg,
+                "target": target,
+                "event": event,
+            },
+            None,
+        )
