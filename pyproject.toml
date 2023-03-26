@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "nonebot-plugin-send-anything-anywhere-nonebug"
-version = "0.1.0a0"
+name = "nonebug-saa"
+version = "0.1.0"
 description = "A nonebug helper for nonebot-plugin-send-anything-anything"
 authors = ["felinae98 <me@felinae98.cn>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/felinae98/nonebot-plugin-send-anything-anywhere-nonebug"
+homepage = "https://github.com/felinae98/nonebug-saa"
 packages = [{include = "nonebot_plugin_saa"}]
 repository = ""
 documentation = ""
