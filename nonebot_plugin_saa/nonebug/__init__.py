@@ -1,9 +1,12 @@
 from typing import Optional
 
+from nonebot import require
 from nonebot.adapters import Bot, Event
 from nonebug.mixin.call_api import ApiContext
 
-from nonebot_plugin_saa import (
+require("nonebot_plugin_saa")
+
+from nonebot_plugin_saa import (  # noqa: E402
     MessageFactory,
     PlatformTarget,
     AggregatedMessageFactory,
