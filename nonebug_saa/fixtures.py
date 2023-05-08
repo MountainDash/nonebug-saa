@@ -7,7 +7,6 @@ from pytest_mock import MockerFixture
 @pytest.fixture(autouse=True)
 def saa_patch(mocker: MockerFixture):
     from nonebot.adapters import Bot, Event
-
     from nonebot_plugin_saa import (
         MessageFactory,
         PlatformTarget,

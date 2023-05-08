@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "nonebug-saa"
-version = "0.1.0"
+version = "0.2.0"
 description = "A nonebug helper for nonebot-plugin-send-anything-anything"
 authors = ["felinae98 <me@felinae98.cn>"]
 license = "MIT"
 readme = "README.md"
 homepage = "https://github.com/felinae98/nonebug-saa"
-packages = [{include = "nonebot_plugin_saa"}]
+packages = [{include = "nonebug_saa"}]
 repository = ""
 documentation = ""
 keywords = []
@@ -25,7 +25,7 @@ nonemoji = "^0.1.2"
 pre-commit = "^2.16.0"
 
 [tool.poetry.plugins.pytest11]
-saa_nonebug = "nonebot_plugin_saa.nonebug.fixtures"
+saa_nonebug = "nonebug_saa.fixtures"
 
 [tool.black]
 line-length = 88
