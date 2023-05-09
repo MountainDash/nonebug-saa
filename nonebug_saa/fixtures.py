@@ -6,7 +6,9 @@ from pytest_mock import MockerFixture
 
 @pytest.fixture(autouse=True)
 def saa_patch(mocker: MockerFixture):
+    import nonebot
     from nonebot.adapters import Bot, Event
+    from nonebot_plugin_saa.utils import auto_select_bot
     from nonebot_plugin_saa import (
         MessageFactory,
         PlatformTarget,
@@ -46,3 +48,13 @@ def saa_patch(mocker: MockerFixture):
         )
 
     mocker.patch.object(AggregatedMessageFactory, "_do_send", _do_send_aggregate)
+
+    raw_get_bot = auto_select_bot.get_bot
+
+    def _get_bot(target: PlatformTarget) -> Bot:
+        all_bots = list(nonebot.get_bots().values())
+        if len(all_bots) == 1 and all_bots[0].adapter.get_name() == "fake":
+            return all_bots[0]
+        return raw_get_bot(target)
+
+    mocker.patch("nonebot_plugin_saa.utils.types.get_bot", _get_bot)
