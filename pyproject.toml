@@ -5,10 +5,10 @@ description = "A nonebug helper for nonebot-plugin-send-anything-anything"
 authors = ["felinae98 <me@felinae98.cn>"]
 license = "MIT"
 readme = "README.md"
-homepage = "https://github.com/felinae98/nonebug-saa"
+homepage = "https://github.com/MountainDash/nonebug-saa"
 packages = [{include = "nonebug_saa"}]
-repository = ""
-documentation = ""
+repository = "https://github.com/MountainDash/nonebug-saa"
+documentation = "https://github.com/MountainDash/nonebug-saa#readme"
 keywords = []
 classifiers = ["Framework :: Pytest"]
 
