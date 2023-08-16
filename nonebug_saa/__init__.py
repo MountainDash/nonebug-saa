@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Union, Optional
 
 from nonebot import require
 from nonebot.adapters import Bot, Event
@@ -16,7 +16,7 @@ from nonebot_plugin_saa import (  # noqa: E402
 
 def should_send_saa(
     ctx: ApiContext,
-    msg: MessageFactory | AggregatedMessageFactory,
+    msg: Union[MessageFactory, AggregatedMessageFactory],
     bot: Bot,
     *,
     target: Optional[PlatformTarget] = None,
