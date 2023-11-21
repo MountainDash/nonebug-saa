@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebug-saa"
-version = "0.2.2"
+version = "0.3.0"
 description = "A nonebug helper for nonebot-plugin-send-anything-anything"
 authors = ["felinae98 <me@felinae98.cn>"]
 license = "MIT"
@@ -16,7 +16,7 @@ classifiers = ["Framework :: Pytest"]
 python = "^3.8"
 nonebug = "^0.3.1"
 pytest-mock = "^3.10.0"
-nonebot-plugin-send-anything-anywhere = ">=0.2.4"
+nonebot-plugin-send-anything-anywhere = ">=0.4.0"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.10.1"
