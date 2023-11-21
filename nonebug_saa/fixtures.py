@@ -57,4 +57,4 @@ def saa_patch(mocker: MockerFixture):
             return all_bots[0]
         return raw_get_bot(target)
 
-    mocker.patch("nonebot_plugin_saa.utils.types.get_bot", _get_bot)
+    mocker.patch("nonebot_plugin_saa.types.get_bot", _get_bot)
