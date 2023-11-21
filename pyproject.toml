@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebug-saa"
-version = "0.3.0"
+version = "0.3.1"
 description = "A nonebug helper for nonebot-plugin-send-anything-anything"
 authors = ["felinae98 <me@felinae98.cn>"]
 license = "MIT"
