@@ -1,17 +1,15 @@
-from typing import Union, Optional
+from typing import TYPE_CHECKING, Optional, Union
 
 from nonebot import require
 from nonebot.adapters import Bot, Event
 from nonebug.mixin.call_api import ApiContext
 
-require("nonebot_plugin_saa")
-
-from nonebot_plugin_saa import (  # noqa: E402
-    MessageFactory,
-    PlatformTarget,
-    AggregatedMessageFactory,
-    extract_target,
-)
+if TYPE_CHECKING:
+    from nonebot_plugin_saa import (
+        AggregatedMessageFactory,
+        MessageFactory,
+        PlatformTarget,
+    )
 
 
 def should_send_saa(
@@ -22,8 +20,12 @@ def should_send_saa(
     target: Optional[PlatformTarget] = None,
     event: Optional[Event] = None,
     at_sender: bool = False,
-    reply: bool = False
+    reply: bool = False,
 ):
+    require("nonebot_plugin_saa")
+
+    from nonebot_plugin_saa import MessageFactory, extract_target
+
     if not target and not event:
         raise RuntimeError("either target or event should be supplied")
     if not target:
