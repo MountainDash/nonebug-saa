@@ -14,10 +14,10 @@ if TYPE_CHECKING:
 
 def should_send_saa(
     ctx: ApiContext,
-    msg: Union[MessageFactory, AggregatedMessageFactory],
+    msg: Union["MessageFactory", "AggregatedMessageFactory"],
     bot: Bot,
     *,
-    target: Optional[PlatformTarget] = None,
+    target: Optional["PlatformTarget"] = None,
     event: Optional[Event] = None,
     at_sender: bool = False,
     reply: bool = False,
