@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Optional, Union
+from typing import TYPE_CHECKING, Union, Optional
 
 from nonebot import require
 from nonebot.adapters import Bot, Event
@@ -6,9 +6,9 @@ from nonebug.mixin.call_api import ApiContext
 
 if TYPE_CHECKING:
     from nonebot_plugin_saa import (
-        AggregatedMessageFactory,
         MessageFactory,
         PlatformTarget,
+        AggregatedMessageFactory,
     )
 
 
