@@ -21,6 +21,7 @@ def should_send_saa(
     event: Optional[Event] = None,
     at_sender: bool = False,
     reply: bool = False,
+    exception: Optional[Exception] = None,
 ):
     require("nonebot_plugin_saa")
 
@@ -42,6 +43,7 @@ def should_send_saa(
                 "reply": reply,
             },
             None,
+            exception,
         )
     else:
         ctx.should_call_api(
@@ -52,4 +54,5 @@ def should_send_saa(
                 "event": event,
             },
             None,
+            exception,
         )
