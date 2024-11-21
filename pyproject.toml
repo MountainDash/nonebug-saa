@@ -13,8 +13,8 @@ keywords = []
 classifiers = ["Framework :: Pytest"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
-nonebug = "^0.3.1"
+python = "^3.9"
+nonebug = ">=0.3.1"
 pytest-mock = "^3.10.0"
 nonebot-plugin-send-anything-anywhere = ">=0.5.0"
 
