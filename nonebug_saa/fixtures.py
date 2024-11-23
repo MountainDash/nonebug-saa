@@ -5,15 +5,15 @@ from pytest_mock import MockerFixture
 
 
 @pytest.fixture(autouse=True)
-def saa_patch(mocker: MockerFixture):
+def _saa_patch(mocker: MockerFixture):
     import nonebot
 
     nonebot.require("nonebot_plugin_saa")
     from nonebot.adapters import Bot, Event
     from nonebot_plugin_saa import (
+        AggregatedMessageFactory,
         MessageFactory,
         PlatformTarget,
-        AggregatedMessageFactory,
         auto_select_bot,
     )
 
